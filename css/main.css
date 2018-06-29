@@ -1,0 +1,66 @@
+/*
+    font-family: 'Montserrat', sans-serif;
+
+    font-family: 'Quicksand', sans-serif;
+*/
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgba(0, 0, 0, .8);
+
+}
+
+.body-wrapper{
+    max-width: 1500px;
+    margin: 0 auto;
+    background-color:white
+
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Quicksand', sans-serif;
+    
+}
+nav{
+    overflow: auto;
+}
+
+.nav-bar li{
+    float: left;
+}
+
+.headline{
+    background-color: rgba(0, 0, 0, .8);
+    height: 30vh;
+    width: inherit;
+}
+.headline-title{
+    padding-top: 10vh;
+}
+
+.headline-title *{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 15px #000; 
+}
+.headline-title h2{
+    font-style: italic;
+}
+@media (max-width: 480px) {
+    h1{
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 481px) {
+    h1{
+        font-size: 40px;
+    }
+    h2{
+        font-size: 30px;
+    }
+    .headline {
+        background-image: url("../code-wallpaper.jpg");
+        background-repeat: repeat-x;
+        background-position: center; 
+    }
+}

@@ -4,116 +4,148 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Current Openings</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" 
     integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Quicksand" rel="stylesheet"> 
+    <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/main.css" />
 </head>
 <body>
-    <header>
-        <nav>
-            <span>LOGO</span>
-            <ul>
-                <li>Home</li>
-                <li>Jobs</li>
-                <li>About</li>
-                <li>Department</li>
-            </ul>
-            <input type="text" placeholder="SEARCH FOR JOBS BY KEYWORD">
-            <span><i class="fas fa-suitcase"></i> 1</span>
-        </nav>
-    </header>
-    
-    <section>
-        <h1>Purchasing Assistant</h1>
-        <h2>Amsterdam, The Netherlands</h2>
-    </section>
-    
-    <section>
-        <div>
-            <h4>Personal details*</h4>
-            <input type="text" name="firstName" id="firstName" placeholder="First Name">
-            <input type="text" name="lastName" id="lastName" placeholder="Last Name">
-            <input type="text" name="email" id="email" placeholder="Email">
-            <input type="text" name="city" id="city" placeholder="City">
-            <input type="text" name="country" id="country" placeholder="Country">
-            <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Phone Number">
-        </div>
+    <div class="body-wrapper">
+        <header>
+            <nav>
+                <ul class="nav-bar">
+                    <li>LOGO</li>
+                    <li>Home</li>
+                    <li>Jobs</li>
+                    <li>About</li>
+                    <li>Department</li>
+                    <li><input type="text" placeholder="SEARCH FOR JOBS BY KEYWORD"></li>
+                    <li><span><i class="fas fa-suitcase"></i> 1</span></li>
+                </ul>
+            </nav>
+        </header>
         
-        <div>
-            <h4>You motivation* </h4>
-            <label for="motivation"></label><textarea name="motivation" id="motivation" cols="30" rows="10"></textarea>
-        </div>
-        
-        <div>
-            <h4>Attach your documents (pdf, doc/docx, jpg; Max size 4 mb)</h4>
-            <label for="resume">Resume</label><input type="file" name="resume">
-            <label for="portfolio">Portfolio</label><input type="file" name="portfolio">
-            <label for="photo">Photo</label><input type="file" name="photo">
-        </div>
-        
-        <span><a href="">&lt; Back to job description</a></span>
-        <span><label for="sendCopy">Send me a copy</label><input type="checkbox" name="sendCopy" id="sendCopy"></span>
-    </section>
-    
-    <section>
-        <div>
-            <h3>Application Procedure</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio nihil vitae corporis 
-                saepe necessitatibus ea deserunt soluta neque. Corporis natus porro quae a nemo commodi 
-                distinctio fuga voluptatum pariatur nostrum?</p>
-                
-                <!-- Open link in a new tab to not lose current application info -->
-                <a href="" target="_blank">Continue reading</a>
-            </div>
-            
-            <div>
-                <h3>Got A Question?</h3>
-                <p><em>Please contact recruitment</em></p>
-                <p>T: +31 20 123 456 78 <br>
-                    Or <a href="mailto:lorem@ipsum.com">send us an email</a>
-                </p>
+        <section class="headline">
+            <div class="headline-title">
+                <h1>Junior Machine Learning Programmer</h1>
+                <h2>Join us in: Amsterdam, The Netherlands</h2>
             </div>
             
         </section>
         
-        <hr>
-        <footer>
-            <div>
-                <h4>Jobs At</h4>
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Jobs</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Department</a></li>
-                </ul>
-            </div>
-            
-            <div>
-                <h4>Information</h4>
-                <ul>
-                    <li><a href="">F.A.Q.</a></li>
-                    <li><a href="">Application Process</a></li>
-                    <li><a href="">Privacy Policy</a></li>
-                    <li><a href="">contact</a></li>
-                </ul>
-            </div>
-            
-            <div>
-                <h4>Follow Us</h4>
-                <li><a href=""><i class="fas fa-envelope"></i>Newsletter</a></li>
-                <li><a href=""><i class="fab fa-instagram"></i>Instagram</a></li>
-                <li><a href=""><i class="fab fa-twitter"></i>Twitter</a></li>
-                <li><a href=""><i class="fab fa-tumblr"></i>Tumblr</a></li>
-                <li><a href=""><i class="fab fa-linkedin-in"></i>LinkedIn</a></li>
-                <li><a href=""><i class="fab fa-facebook-f"></i>Facebook</a></li>
-                <li><a href=""><i class="fab fa-pinterest-p"></i>Pinterest</a></li>
-                <li><a href=""><i class="fab fa-youtube"></i>YouTube</a></li>
-                <li><a href=""><i class="fab fa-google-plus-g"></i>Google+</a></li>
+        <section>
+            <form method="post" enctype="multipart/form-data">
+                <div class="application personal-details">
+                    <h4>Personal details*</h4>
+                    <div><input type="text" name="firstName" id="firstName" placeholder="First Name"></div>
+                    <div><input type="text" name="lastName" id="lastName" placeholder="Last Name"></div>
+                    
+                    <div>
+                        <fieldset>
+                            <legend>Gender</legend>                  
+                            <input type="radio" id="female" name="gender"> <label for="female">Female</label>
+                            <br>
+                            <input type="radio" id="male" name="gender"> <label for="male">Male</label>
+                            <br>
+                            <input type="radio" id="other" name="gender"> <label for="other">Other/Prefer Not to Say</label>
+                        </fieldset>
+                    </div>
+                    
+                    <div><input type="date" name="birthdate" id="birthdate"></div>
+                    <div><input type="text" name="email" id="email" placeholder="Email"></div>
+                    <div><input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Phone Number"></div>
+                    <div><input type="text" name="city" id="city" placeholder="City"></div>
+                    <div><input type="text" name="country" id="country" placeholder="Country"></div>
+                </div>
                 
-            </div>
-        </footer>
+                <div class="application cover-letter">
+                    <h4>You motivation* </h4>
+                    <label for="motivation"></label><textarea name="motivation" id="motivation" cols="30" rows="10"></textarea>
+                </div>
+                
+                <div class="application document">
+                    <h4>Attach your documents (pdf, doc/docx, jpg/jpeg; Max size 4 mb)</h4>
+                    <!-- This file validation must be ultimately handled by the backend -->
+                    <div><label for="resume" accept=".pdf, .jpeg, .jpg, .doc, .docx">Resume</label><input type="file" name="resume"></div>
+                    <div><label for="portfolio" accept=".pdf, .jpeg, .jpg, .doc, .docx">Portfolio</label><input type="file" name="portfolio"></div>
+                    <div><label for="photo" accept=".pdf, .jpeg, .jpg, .doc, .docx">Photo</label><input type="file" name="photo"></div>
+                </div>
+                
+                <div><span><a href="">&lt; Back to job description</a></span></div>
+                <div><span><label for="sendCopy">Send me a copy</label><input type="checkbox" name="sendCopy" id="sendCopy"></span></div>
+                <button>Submit</button>
+            </form>
+        </section>
         
-    </body>
-    <script src="./script.js"></script>
-    </html>
+        <section>
+            <div>
+                <h3>Frequently Asked Questions</h3>
+                <h5>What happens after I apply?</h5>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio nihil vitae corporis 
+                    saepe necessitatibus ea deserunt soluta neque.</p>
+                    
+                    <h5>What happens to my information after I apply?</h5>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio nihil vitae corporis 
+                        saepe necessitatibus ea deserunt soluta neque.</p>
+                        
+                        <!-- Open link in a new tab to not lose current application info -->
+                        <a href="" target="_blank">Continue reading</a>
+                    </div>
+                    
+                    <div>
+                        <h3>Have Further Questions?</h3>
+                        <p><em>Please contact recruitment</em></p>
+                        <p>T: +31 20 123 456 78 <br>
+                            Or <a href="mailto:lorem@ipsum.com">send us an email</a>
+                        </p>
+                    </div>
+                    
+                </section>
+                
+                <hr>
+                <footer>
+                    <div>
+                        <h4>Jobs At</h4>
+                        <ul>
+                            <li><a href="">Home</a></li>
+                            <li><a href="">Jobs</a></li>
+                            <li><a href="">About</a></li>
+                            <li><a href="">Department</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4>Information</h4>
+                        <ul>
+                            <li><a href="">F.A.Q.</a></li>
+                            <li><a href="">Application Process</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                            <li><a href="">contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4>Follow Us</h4>
+                        <li><a href=""><i class="fas fa-envelope"></i>Newsletter</a></li>
+                        <li><a href=""><i class="fab fa-instagram"></i>Instagram</a></li>
+                        <li><a href=""><i class="fab fa-twitter"></i>Twitter</a></li>
+                        <li><a href=""><i class="fab fa-tumblr"></i>Tumblr</a></li>
+                        <li><a href=""><i class="fab fa-linkedin-in"></i>LinkedIn</a></li>
+                        <li><a href=""><i class="fab fa-facebook-f"></i>Facebook</a></li>
+                        <li><a href=""><i class="fab fa-pinterest-p"></i>Pinterest</a></li>
+                        <li><a href=""><i class="fab fa-youtube"></i>YouTube</a></li>
+                        <li><a href=""><i class="fab fa-google-plus-g"></i>Google+</a></li>
+                        
+                    </div>
+                    
+                    <div>
+                        <h4>Job Alert</h4>
+                        <p><a href="">Subscribe to our job alert</a></p>
+                    </div>
+                </footer>
+            </div>
+        </body>
+        <script src="./script.js"></script>
+        </html>
