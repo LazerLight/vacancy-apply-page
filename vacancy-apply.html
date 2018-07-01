@@ -14,72 +14,66 @@
 <body>
     <div class="body-wrapper">
         <header>
+            <span class="menu-display"><i class="fas fa-bars"></i> PoolHacker</span>
             <nav>
                 <ul class="nav-bar">
-                    <li>LOGO</li>
-                    <li>Home</li>
-                    <li>Jobs</li>
-                    <li>About</li>
-                    <li>Department</li>
-                    <li><input type="text" placeholder="SEARCH FOR JOBS BY KEYWORD"></li>
-                    <li><span><i class="fas fa-suitcase"></i> 1</span></li>
+                    <li><a href=""><i class="fas fa-swimming-pool fa-3x"></i></a></li>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Jobs</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Department</a></li>
+                    <li><a href=""><i class="fas fa-suitcase"></i> Saved Jobs</a></li>
                 </ul>
             </nav>
         </header>
         
-        <section class="headline">
+        <section class="headline-section">
             <div class="headline-title">
                 <h1>Junior Machine Learning Programmer</h1>
+                <br>
                 <h2>Join us in: Amsterdam, The Netherlands</h2>
             </div>
             
         </section>
         
-        <section>
+        <section class="application-section">
             <form method="post" enctype="multipart/form-data">
-                <div class="application personal-details">
-                    <h4>Personal details*</h4>
-                    <div><input type="text" name="firstName" id="firstName" placeholder="First Name"></div>
-                    <div><input type="text" name="lastName" id="lastName" placeholder="Last Name"></div>
-                    
-                    <div>
-                        <fieldset>
-                            <legend>Gender</legend>                  
-                            <input type="radio" id="female" name="gender"> <label for="female">Female</label>
-                            <br>
-                            <input type="radio" id="male" name="gender"> <label for="male">Male</label>
-                            <br>
-                            <input type="radio" id="other" name="gender"> <label for="other">Other/Prefer Not to Say</label>
-                        </fieldset>
-                    </div>
-                    
-                    <div><input type="date" name="birthdate" id="birthdate"></div>
-                    <div><input type="text" name="email" id="email" placeholder="Email"></div>
-                    <div><input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Phone Number"></div>
-                    <div><input type="text" name="city" id="city" placeholder="City"></div>
-                    <div><input type="text" name="country" id="country" placeholder="Country"></div>
-                </div>
+                <ul class="application personal-details">
+                    <li><h4>Personal details*</h4></li>
+                    <li><input type="text" name="first-name" id="first-name" placeholder="First Name"></li>
+                    <li><input type="text" name="last-name" id="last-name" placeholder="Last Name"></li> 
+                    <li>
+                        <select id="gender" required>
+                            <option value="none" disabled selected>Select your gender</option>               
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                            <option value="other"> Other</option>
+                        </select>
+                    </li>
+                    <li><input type="date" name="birthdate" id="birthdate"></li>
+                    <li><input type="text" name="email" id="email" placeholder="Email"></li>
+                    <li><input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Phone Number"></li>
+                    <li><input type="text" name="city" id="city" placeholder="City"></li>
+                    <li><input type="text" name="country" id="country" placeholder="Country"></li>
+                </ul>
+                <br>
                 
-                <div class="application cover-letter">
-                    <h4>You motivation* </h4>
-                    <label for="motivation"></label><textarea name="motivation" id="motivation" cols="30" rows="10"></textarea>
-                </div>
-                
-                <div class="application document">
-                    <h4>Attach your documents (pdf, doc/docx, jpg/jpeg; Max size 4 mb)</h4>
+                <ul class="application document">
+                    <li> <h4>Attach your documents</h4> (pdf, doc/docx, jpg/jpeg; Max size 4 mb)</li>
                     <!-- This file validation must be ultimately handled by the backend -->
-                    <div><label for="resume" accept=".pdf, .jpeg, .jpg, .doc, .docx">Resume</label><input type="file" name="resume"></div>
-                    <div><label for="portfolio" accept=".pdf, .jpeg, .jpg, .doc, .docx">Portfolio</label><input type="file" name="portfolio"></div>
-                    <div><label for="photo" accept=".pdf, .jpeg, .jpg, .doc, .docx">Photo</label><input type="file" name="photo"></div>
-                </div>
-                
+                    <li><label for="CV" accept=".pdf, .jpeg, .jpg, .doc, .docx">CV</label><input type="file" name="CV"></li>
+                    <li><label for="portfolio" accept=".pdf, .jpeg, .jpg, .doc, .docx">Portfolio</label><input type="file" name="portfolio"></li>
+                    <li><label for="cover-letter" accept=".pdf, .jpeg, .jpg, .doc, .docx">Cover Letter</label><input type="file" name="cover-letter"></li>
+                    <li><label for="photo" accept=".pdf, .jpeg, .jpg, .doc, .docx">Photo</label><input type="file" name="photo"></li>
+                </ul>
+                <div><em>(* required)</em></div>
                 <div><span><a href="">&lt; Back to job description</a></span></div>
                 <div><span><label for="sendCopy">Send me a copy</label><input type="checkbox" name="sendCopy" id="sendCopy"></span></div>
                 <button>Submit</button>
             </form>
         </section>
-        
-        <section>
+        <br>
+        <section class="miscellaneous-section">
             <div>
                 <h3>Frequently Asked Questions</h3>
                 <h5>What happens after I apply?</h5>
@@ -107,8 +101,9 @@
                 <hr>
                 <footer>
                     <div>
-                        <h4>Jobs At</h4>
                         <ul>
+                            <li>Netwerven</li>
+                            <li><a href="">Subscribe to our job alert</a></li>       
                             <li><a href="">Home</a></li>
                             <li><a href="">Jobs</a></li>
                             <li><a href="">About</a></li>
@@ -117,8 +112,8 @@
                     </div>
                     
                     <div>
-                        <h4>Information</h4>
                         <ul>
+                            <li>Information</li>
                             <li><a href="">F.A.Q.</a></li>
                             <li><a href="">Application Process</a></li>
                             <li><a href="">Privacy Policy</a></li>
@@ -127,25 +122,27 @@
                     </div>
                     
                     <div>
-                        <h4>Follow Us</h4>
-                        <li><a href=""><i class="fas fa-envelope"></i>Newsletter</a></li>
-                        <li><a href=""><i class="fab fa-instagram"></i>Instagram</a></li>
-                        <li><a href=""><i class="fab fa-twitter"></i>Twitter</a></li>
-                        <li><a href=""><i class="fab fa-tumblr"></i>Tumblr</a></li>
-                        <li><a href=""><i class="fab fa-linkedin-in"></i>LinkedIn</a></li>
-                        <li><a href=""><i class="fab fa-facebook-f"></i>Facebook</a></li>
-                        <li><a href=""><i class="fab fa-pinterest-p"></i>Pinterest</a></li>
-                        <li><a href=""><i class="fab fa-youtube"></i>YouTube</a></li>
-                        <li><a href=""><i class="fab fa-google-plus-g"></i>Google+</a></li>
-                        
+                        <ul>
+                            <li>Follow Us</li>
+                            <li><a href=""><i class="fas fa-envelope"></i> Newsletter</a></li>
+                            <li><a href=""><i class="fab fa-instagram"></i> Instagram</a></li>
+                            <li><a href=""><i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a href=""><i class="fab fa-tumblr"></i> Tumblr</a></li>
+                            <li><a href=""><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                            <li><a href=""><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                            <li><a href=""><i class="fab fa-pinterest-p"></i> Pinterest</a></li>
+                            <li><a href=""><i class="fab fa-youtube"></i> YouTube</a></li>
+                            <li><a href=""><i class="fab fa-google-plus-g"></i> Google+</a></li>
+                        </ul>
                     </div>
-                    
-                    <div>
-                        <h4>Job Alert</h4>
-                        <p><a href="">Subscribe to our job alert</a></p>
-                    </div>
+
                 </footer>
             </div>
         </body>
+        <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
         <script src="./script.js"></script>
+        
         </html>
