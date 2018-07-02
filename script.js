@@ -1,9 +1,23 @@
+const appForm = $("#application-form");
+const miscSection =  $(".miscellaneous-section");
+const appSecion = $(".application-section");
+const headlineTitle = $(".headline-title");
+const jobTitle = $(".job-title");
+const jobLocation = $(".job-location");
+const clearFormButton = $(".clear-btn");
+
+$( document ).ready(() =>{
+    resetForm();
+});
+
 $( ".menu-display" ).click(function() {    
     $("nav").animate({width:'toggle'},200);
 });
 
-
-$("#application-form").validate({
+clearFormButton.click(()=>{
+    resetForm();
+})
+appForm.validate({
     rules: {
         "first-name": "required",
         //     "last-name": "required",
@@ -42,8 +56,7 @@ $("#application-form").validate({
         zipcode: "Enter a valid Dutch Zipcode"
     },
     submitHandler: (form) => {
-        $("#application-form")[0].reset();
-        //successfulSubmit()
+        successfulSubmit(form)
     },
     
     invalidHandler: (event, validator) => {
@@ -57,27 +70,25 @@ $("#application-form").validate({
 });
 
 
-
+const resetForm = () =>{
+    appForm[0].reset();
+}
 
 const successfulSubmit = (formSubmit) => {
     $(".submit-btn").prop('disabled', true);
-    formSubmit.submit();
-    $("#application-form")[0].reset();
-
-    setTimeout(() =>{
-        window.location.href = "http://www.wikipedia.com/";
-    }, 3000);
+    console.log(formSubmit)
+    renderSuccessScreen();
+    setTimeout(() =>{      
+        window.location.href = "http://www.example.com/";
+    }, 10000);
 };
 
 const renderSuccessScreen = () =>{
     miscSection.hide();
     appSecion.hide();
-    headlineTitle.html(`<h1>Thanks for your ${jobTitle.text()} application, hope to see you soon in ${jobLocation.text()}</h1>`)
-
+    let applicantName = `${$("#first-name").val()} ${$("#last-name").val()}`
+    headlineTitle.html(`<h1>Thanks ${applicantName}! 
+                        Hope to see you soon in ${jobLocation.text()} 
+                        as a ${jobTitle.text()}!</h1><br>
+                        <h6>(This page will redirect in 10 seconds)</h6>`)
 }
-
-const miscSection =  $(".miscellaneous-section");
-const appSecion = $(".application-section")
-const headlineTitle = $(".headline-title")
-const jobTitle = $(".job-title")
-const jobLocation = $(".job-location")
