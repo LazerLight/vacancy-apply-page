@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Current Openings</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" 
-    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Quicksand" rel="stylesheet"> 
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Quicksand" rel="stylesheet" /> 
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/main.css" />
 </head>
@@ -29,39 +29,41 @@
         
         <section class="headline-section">
             <div class="headline-title">
-                <h1>Junior Machine Learning Programmer</h1>
+                <h1 class="job-title">Junior Machine Learning Programmer</h1>
                 <br>
-                <h2>Join us in: Amsterdam, The Netherlands</h2>
+                <div><h2>Join us in: </h2><h2 class="job-location">Amsterdam, The Netherlands</h2></div>
             </div>
             
         </section>
         
         <section class="application-section">
-            <form method="post" enctype="multipart/form-data">
+            <div class="error-field"><em>Please fill out the required fields</em></div>
+            <form method="POST" enctype="multipart/form-data" id="application-form">
                 <ul class="application personal-details">
                     <li><h4>Personal details*</h4></li>
-                    <li><input type="text" name="first-name" id="first-name" placeholder="First Name"></li>
-                    <li><input type="text" name="last-name" id="last-name" placeholder="Last Name"></li> 
+                    <li><label for="first-name">First Name</label><input type="text" name="first-name" id="first-name" placeholder="Mark"></li>
+                    <li><label for="last-name">Last Name</label><input type="text" name="last-name" id="last-name" placeholder="Rutte"></li> 
                     <li>
-                        <select id="gender" required>
+                        <select id="gender">
                             <option value="none" disabled selected>Select your gender</option>               
                             <option value="female">Female</option>
                             <option value="male">Male</option>
                             <option value="other"> Other</option>
                         </select>
                     </li>
-                    <li><input type="date" name="birthdate" id="birthdate"></li>
-                    <li><input type="text" name="email" id="email" placeholder="Email"></li>
-                    <li><input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Phone Number"></li>
-                    <li><input type="text" name="city" id="city" placeholder="City"></li>
-                    <li><input type="text" name="country" id="country" placeholder="Country"></li>
+                    <li><label for="birthdate">Birthdate</label><input type="date" name="birthdate" id="birthdate"></li>
+                    <li><label for="email">Email Address</label><input type="text" name="email" id="email" placeholder="premier@vvd.nl"></li>
+                    <li><label for="phone-number">Phone Number</label><input type="tel" name="phone-number" id="phone-number" placeholder="+31 202 400 240"></li>
+                    <li><label for="street-address">Address in the Netherlands</label><input type="text" name="street-address" id="street-address" placeholder="Hofweg 1"></li>
+                    <li><label for="city">City</label><input type="text" name="city" id="city" placeholder="The Hague"></li>
+                    <li><label for="zipcode">Zipcode</label><input name="zipcode" id="zipcode" placeholder="2511 AA"></li>
                 </ul>
                 <br>
                 
                 <ul class="application document">
                     <li> <h4>Attach your documents</h4> (pdf, doc/docx, jpg/jpeg; Max size 4 mb)</li>
                     <!-- This file validation must be ultimately handled by the backend -->
-                    <li><label for="CV" accept=".pdf, .jpeg, .jpg, .doc, .docx">CV</label><input type="file" name="CV"></li>
+                    <li><label for="CV" accept=".pdf, .jpeg, .jpg, .doc, .docx">CV*</label><input type="file" name="CV"></li>
                     <li><label for="portfolio" accept=".pdf, .jpeg, .jpg, .doc, .docx">Portfolio</label><input type="file" name="portfolio"></li>
                     <li><label for="cover-letter" accept=".pdf, .jpeg, .jpg, .doc, .docx">Cover Letter</label><input type="file" name="cover-letter"></li>
                     <li><label for="photo" accept=".pdf, .jpeg, .jpg, .doc, .docx">Photo</label><input type="file" name="photo"></li>
@@ -69,7 +71,7 @@
                 <div><em>(* required)</em></div>
                 <div><span><a href="">&lt; Back to job description</a></span></div>
                 <div><span><label for="sendCopy">Send me a copy</label><input type="checkbox" name="sendCopy" id="sendCopy"></span></div>
-                <button>Submit</button>
+                <button class="submit-btn">Submit</button>
             </form>
         </section>
         <br>
@@ -142,7 +144,9 @@
         <script
 			  src="https://code.jquery.com/jquery-3.3.1.min.js"
 			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-			  crossorigin="anonymous"></script>
+              crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
         <script src="./script.js"></script>
         
         </html>

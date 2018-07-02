@@ -65,7 +65,16 @@ nav{
     -webkit-flex-flow: row wrap;
     justify-content: space-around;
 }
-  
+label.error,
+.error-field {
+    color: #ff0000;
+    font-weight: bold;
+  }
+
+.error-field{
+    display: none;
+}
+
 @media (max-width: 480px) {
     h1{
         font-size: 30px;
