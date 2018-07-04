@@ -112,7 +112,7 @@ $.validator.addMethod( "maxsize", function( value, element, param ) {
 	}
     
 	return true;
-}, $.validator.format( "Must be .pdf, .jpeg/.jpg or .doc/.docx format not exceeding 4 megabytes." ) );
+}, $.validator.format( "Must be .pdf, .rtf, .txt or .doc/.docx format not exceeding 4 megabytes." ) );
 
 appForm.validate({
     //Gender and age may be optional based on NL law?
@@ -133,21 +133,17 @@ appForm.validate({
         },
         CV:{
             required: true,
-            extension: "pdf,jpeg,jpg,doc,docx",
+            extension: "pdf,rtf,txt,doc,docx",
             maxsize: 4000000,
         },
         portfolio:{
-            extension: "pdf,jpeg,jpg,doc,docx",
+            extension: "pdf,rtf,txt,doc,docx",
             maxsize: 4000000,
         },
         "cover-letter":{
-            extension: "pdf,jpeg,jpg,doc,docx",
+            extension: "pdf,rtf,txt,doc,docx",
             maxsize: 4000000,
         },
-        photo:{
-            extension: "pdf,jpeg,jpg,doc,docx",
-            maxsize: 4000000,
-        }
     },
     messages: {
         email: "Enter a valid email address.",
