@@ -148,10 +148,10 @@ appForm.validate({
     messages: {
         email: "Enter a valid email address.",
         zipcode: "Enter a valid Dutch Zipcode.",
-        CV: {extension: "Must be .pdf, .jpeg/.jpg or .doc/.docx format not exceeding 4 megabytes."},
-        portfolio: {extension: "Must be .pdf, .jpeg/.jpg or .doc/.docx format not exceeding 4 megabytes."},    
-        "cover-letter": {extension: "Must be .pdf, .jpeg/.jpg or .doc/.docx format not exceeding 4 megabytes."},    
-        photo: {extension: "Must be .pdf, .jpeg/.jpg or .doc/.docx format not exceeding 4 megabytes."},    
+        CV: {extension: "Must be .pdf, .rtf, .txt or .doc/.docx format not exceeding 4 megabytes."},
+        portfolio: {extension: "Must be .pdf, .rtf, .txt or .doc/.docx format not exceeding 4 megabytes."},    
+        "cover-letter": {extension: "Must be .pdf, .rtf, .txt or .doc/.docx format not exceeding 4 megabytes."},    
+        photo: {extension: "Must be .pdf, .rtf, .txt or .doc/.docx format not exceeding 4 megabytes."},    
 
     },
     submitHandler: (form) => {
