@@ -14,13 +14,15 @@
 <body>
     <div class="body-wrapper">
         <header>
+
+            <span class="logo"><i class="fas fa-chess-queen fa-2x"></i> LOGO</span>
             <span class="menu-display"><i class="fas fa-bars"></i></span>
+
             <nav>
                 <ul class="nav-bar">
                     <li><a href="">Home</a></li>
-                    <li><a href="">Jobs</a></li>
                     <li><a href="">About</a></li>
-                    <li><a href="">Department</a></li>
+                    <li><a href="">Jobs</a></li>
                     <li><a href=""><i class="fas fa-suitcase"></i> Saved Jobs</a></li>
                 </ul>
             </nav>
@@ -42,14 +44,14 @@
                     <li><label for="first-name">First Name</label><input type="text" name="first-name" id="first-name" placeholder="Mark"></li>
                     <li><label for="last-name">Last Name</label><input type="text" name="last-name" id="last-name" placeholder="Rutte"></li> 
                     <li>
-                        <select id="gender">
+                        <select id="gender" class="ignore">
                             <option value="none" disabled selected>Select your gender</option>               
                             <option value="female">Female</option>
                             <option value="male">Male</option>
                             <option value="other"> Other</option>
                         </select>
                     </li>
-                    <li><label for="birthdate">Birthdate</label><input type="date" name="birthdate" id="birthdate"></li>
+                    <li><label for="birthdate">Birthdate</label><input type="date" name="birthdate" id="birthdate" class="ignore"></li>
                     <li><label for="email">Email Address</label><input type="text" name="email" id="email" placeholder="premier@vvd.nl"></li>
                     <li><label for="phone-number">Phone Number</label><input type="tel" name="phone-number" id="phone-number" placeholder="+31 202 400 240"></li>
                     <li><label for="street-address">Address in the Netherlands</label><input type="text" name="street-address" id="street-address" placeholder="Hofweg 1"></li>
@@ -61,20 +63,24 @@
                     <li class="sub-title"> <h4>Attach your documents</h4> </li>
                     <!-- This file validation must be ultimately handled by the backend -->
                     <div>(pdf, doc/docx, jpg/jpeg; Max size 4 mb)</div>
-                    <li><label for="CV" accept=".pdf, .jpeg, .jpg, .doc, .docx">CV*</label><input type="file" name="CV"></li>
+                    <li><label for="CV" accept=".pdf, .jpeg, .jpg, .doc, .docx">CV*</label><input type="file" name="CV" ></li>
                     <li><label for="portfolio" accept=".pdf, .jpeg, .jpg, .doc, .docx">Portfolio</label><input type="file" name="portfolio"></li>
                     <li><label for="cover-letter" accept=".pdf, .jpeg, .jpg, .doc, .docx">Cover Letter</label><input type="file" name="cover-letter"></li>
                     <li><label for="photo" accept=".pdf, .jpeg, .jpg, .doc, .docx">Photo</label><input type="file" name="photo"></li>
                 </ul>
+
+                <br>
+<br>
                 <div><em>(* required)</em></div>
-                <div><span><a href="">&lt; Back to job description</a></span></div>
                 <div><span><label for="sendCopy">Send me a copy of my application</label><input type="checkbox" name="sendCopy" id="sendCopy"></span></div>
-                
                 <button class="submit-btn">Submit</button>
                 <button class="clear-btn">Clear Form</button>
                 <div class="message-field">Please fill out the required fields</div>
                 
             </form>
+            <hr>
+            <div><span><a href="">&lt; Back to job description</a></span></div>
+
         </section>
         <br>
         <section class="miscellaneous-section">
@@ -123,7 +129,7 @@
                             
                             <div>
                                 <span class="faq">
-                                    <h5><i class="fas fa-plus-square"></i><i class="fas fa-minus-square"></i>Have Further Questions?</h5>
+                                    <h5><i class="fas fa-plus-square"></i><i class="fas fa-minus-square"></i> Have Further Questions?</h5>
                                     <p>Please contact recruitment:
                                         <br>
                                         T: +31 20 123 456 78 
@@ -135,7 +141,7 @@
                             </div>
                             
                         </section>
-                        
+                        <br>
                         <hr>
                         <footer>
                             <div>
@@ -160,7 +166,7 @@
                             </div>
                             
                             <div>
-                                <ul>
+                                <ul class="follow-us">
                                     <li>Follow Us</li>
                                     <li><a href=""><i class="fas fa-envelope"></i> Newsletter</a></li>
                                     <li><a href=""><i class="fab fa-instagram"></i> Instagram</a></li>

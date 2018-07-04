@@ -1,12 +1,12 @@
-/*
-font-family: 'Montserrat', sans-serif;
-
-font-family: 'Quicksand', sans-serif;
-*/
 body{
     font-family: 'Montserrat', 'Times New Roman', sans-serif;
     background-color: rgba(0, 0, 0, .8);
     min-height: 100vh;
+    
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Quicksand', 'Courier New', sans-serif;
     
 }
 
@@ -16,30 +16,51 @@ body{
     background-color:white
     
 }
-h1,h2,h3,h4,h5,h6{
-    font-family: 'Quicksand', 'Courier New', sans-serif;
-    
-}
+
 nav{
     overflow: auto;
-}
-
-.menu-display{
-    display: none;
-    font-size: 50px;
 }
 
 .nav-bar li{
     float: left;
 }
 
+.nav-bar li,
+footer div ul li{
+    text-align: center;
+    background-color: white;
+    padding: 15px;
+}
+
+.nav-bar li a,
+footer div ul li a{
+    color: white;
+    text-decoration: underline;
+    color: black;
+}
+
+.logo{
+    float: left;
+    padding: 10px;
+}
+.menu-display{
+    display: none;
+    font-size: 50px;
+}
+
 .headline-section{
     background-color: rgba(0, 0, 0, .8);
     height: 30vh;
-    width: inherit;
+    width: 100%;
+    
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    
     justify-content: center;
-
+    
     -webkit-flex-direction: column;
     flex-direction: column;
 }
@@ -50,6 +71,7 @@ nav{
     text-align: center;
     text-shadow: 1px 1px 15px #000; 
 }
+
 .headline-title h2{
     font-style: italic;
 }
@@ -65,10 +87,11 @@ nav{
     display: -webkit-flex;
     display: flex;
     
-    flex-flow: row-wrap;
+    flex-flow: row wrap;
     -webkit-flex-flow: row wrap;
     justify-content: space-around;
 }
+
 label.error,
 .message-field {
     color: #ff0000;
@@ -77,25 +100,6 @@ label.error,
 
 .message-field{
     display: none;
-}
-.nav-bar li,
-footer div ul li{
-    text-align: center;
-    background-color: white;
-    padding: 15px;
-}
-.logo,
-footer div ul li:first-child{
-    background-color: rgba(0, 0, 0, .8);
-    color: white;
-    font-weight: bold;
-}
-.logo,
-.nav-bar li a,
-footer div ul li a{
-    color: white;
-    text-decoration: underline;
-    color: black;
 }
 
 .application li{
@@ -113,7 +117,7 @@ footer div ul li a{
     color: white;
     font-weight: bold;
     font-size: 1.5em;
-
+    
 }
 
 .faq h5{
@@ -130,6 +134,11 @@ footer div ul li a{
     display: none;
 }
 
+footer div ul li:first-child{
+    background-color: rgba(0, 0, 0, .8);
+    color: white;
+    font-weight: bold;
+}
 
 @media (max-width: 480px) {
     h1{
@@ -138,10 +147,10 @@ footer div ul li a{
     h4{
         font-size: 20px;
     }
-    
-    .menu-display{
-        display: block;
+    .logo{
+        float: right;
     }
+    
     nav{
         z-index: 5; 
         position: absolute;
@@ -165,6 +174,9 @@ footer div ul li a{
         color: black;
     }
     
+    .menu-display{
+        display: inline;
+    }
     
     .application li input,
     .application li select{
@@ -201,9 +213,10 @@ footer div ul li a{
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex;
-
-        -webkit-flex-direction: column;
-        flex-direction: column;
+        
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        
         justify-content: flex-end;
         font-size: 20px;
     }
@@ -234,24 +247,24 @@ footer div ul li a{
     
     footer{
         position:absolute;
+        background-color: white;
+        width: 100%;
+        
     }
-    footer div ul{
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-
-        width: 30%;
-        margin-top: 3px;
-        margin-bottom: 3px;
-        border-right: 1px;
+    footer div{
+        float: left;
+        width: 33.33%;
+        height: 100%;
+        
     }
     
-    
-    footer div ul li{
-        justify-content: space-between;
-        border-right: 1px solid black;
+    .follow-us li{
+        width: 50%;
+        float: left;
+        box-sizing: border-box;
+    }
+    .follow-us li:first-child{
+        width: 100%;
     }
     
 }

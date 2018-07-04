@@ -13,13 +13,49 @@ const singleFaq = $('.faq h5');
 const resetForm = () =>{
     appForm[0].reset();
 }
-const successfulSubmit = (formSubmit) => {
-    $(".submit-btn").prop('disabled', true);
-    renderSuccessScreen();
-    setTimeout(() =>{      
-        window.location.href = "http://www.example.com/";
-    }, 10000);
-};
+
+$( document ).ready(() =>{
+    //By clearing form on page load, will help prevent accidental duplicate submissions in case of going back.
+    resetForm();
+});
+
+$( ".menu-display" ).click(() => {  
+    //for mobile version  
+    $("nav").animate({width:'toggle'},200);
+});
+
+
+$("#sendCopy").click(()=>{
+    let email = applicantEmail.val()
+    
+    if (!$("#sendCopy").is(':checked')){
+        messageField.hide();
+        return
+    } else if ($("#sendCopy").is(':checked') && email != ""){
+        messageField.text(`A copy will be sent to '${email}'`)
+        messageField.show();
+        
+    } else {
+        messageField.text(`Give us an email address first!`)
+        messageField.show();
+        
+    }
+})
+
+clearFormButton.click(()=>{
+    resetForm();
+})
+
+singleFaq.click(function() {
+    $(this).siblings().slideToggle();
+    $(this).find('.fa-plus-square').toggle();
+    $(this).find('.fa-minus-square').toggle();
+});
+/*
+
+Submission stuff
+
+*/
 
 const renderSuccessScreen = () =>{
     miscSection.hide();
@@ -44,25 +80,21 @@ const renderSuccessScreen = () =>{
     
 }
 
-
-$( document ).ready(() =>{
-    resetForm();
-});
-
-$( ".menu-display" ).click(() => {    
-    $("nav").animate({width:'toggle'},200);
-});
-
-singleFaq.click(function() {
-    $(this).siblings().slideToggle();
-    $(this).find('.fa-plus-square').toggle();
-    $(this).find('.fa-minus-square').toggle();
-});
+const successfulSubmit = (formSubmit) => {
+    $(".submit-btn").prop('disabled', true);
+    renderSuccessScreen();
+    setTimeout(() =>{      
+        //Redirect to help prevent accidental duplicate submissions
+        window.location.href = "http://www.example.com/";
+    }, 10000);
+};
 
 
-clearFormButton.click(()=>{
-    resetForm();
-})
+/*
+
+Validation stuff
+
+*/
 
 $.validator.addMethod( "maxsize", function( value, element, param ) {
 	if ( this.optional( element ) ) {
@@ -83,47 +115,48 @@ $.validator.addMethod( "maxsize", function( value, element, param ) {
 }, $.validator.format( "Must be .pdf, .jpeg/.jpg or .doc/.docx format not exceeding 4 megabytes." ) );
 
 appForm.validate({
+    //Gender and age may be optional based on NL law?
+    ignore: ".ignore",
     rules: {
         "first-name": "required",
-        //     "last-name": "required",
-        //     gender: "required",
-        //     birthdate: {
-        //         required: true,
-        //         date : true
-        //     },
-        // email: {
-        //     required: true,
-        //     email : true
-        // },
-        //     "phone-number": "required",
-        //     "street-address": "required",
-        //     city: "required",
-        //     zipcode: {
-        //         required: true,
-        //         postalcodeNL : true
-        //     },
-    //     CV:{
-    //         // required: true,
-    //         extension: "pdf,jpeg,jpg,doc,docx",
-    //         filesize: 4000000,
-    //     },
-    //     portfolio:{
-    //         extension: "pdf,jpeg,jpg,doc,docx",
-    //         filesize: 4000000,
-    //     },
-    //     "cover-letter":{
-    //         extension: "pdf,jpeg,jpg,doc,docx",
-    //         filesize: 4000000,
-    //     },
-    //     photo:{
-    //         extension: "pdf,jpeg,jpg,doc,docx",
-    //         filesize: 4000000,
-    //     }
+        "last-name": "required",
+        email: {
+            required: true,
+            email : true
+        },
+        "phone-number": "required",
+        "street-address": "required",
+        city: "required",
+        zipcode: {
+            required: true,
+            postalcodeNL : true
+        },
+        CV:{
+            required: true,
+            extension: "pdf,jpeg,jpg,doc,docx",
+            maxsize: 4000000,
+        },
+        portfolio:{
+            extension: "pdf,jpeg,jpg,doc,docx",
+            maxsize: 4000000,
+        },
+        "cover-letter":{
+            extension: "pdf,jpeg,jpg,doc,docx",
+            maxsize: 4000000,
+        },
+        photo:{
+            extension: "pdf,jpeg,jpg,doc,docx",
+            maxsize: 4000000,
+        }
     },
     messages: {
-        email: "Enter a valid email address",
-        zipcode: "Enter a valid Dutch Zipcode",
-        
+        email: "Enter a valid email address.",
+        zipcode: "Enter a valid Dutch Zipcode.",
+        CV: {extension: "Must be .pdf, .jpeg/.jpg or .doc/.docx format not exceeding 4 megabytes."},
+        portfolio: {extension: "Must be .pdf, .jpeg/.jpg or .doc/.docx format not exceeding 4 megabytes."},    
+        "cover-letter": {extension: "Must be .pdf, .jpeg/.jpg or .doc/.docx format not exceeding 4 megabytes."},    
+        photo: {extension: "Must be .pdf, .jpeg/.jpg or .doc/.docx format not exceeding 4 megabytes."},    
+
     },
     submitHandler: (form) => {
         successfulSubmit(form)
@@ -139,25 +172,3 @@ appForm.validate({
         }
     }
 });
-
-
-$("#sendCopy").click(()=>{
-    let email = applicantEmail.val()
-    
-    if (!$("#sendCopy").is(':checked')){
-        messageField.hide();
-        return
-    } else if ($("#sendCopy").is(':checked') && email != ""){
-        console.log('a copy')
-        messageField.text(`A copy will be sent to '${email}'`)
-        messageField.show();
-        
-    } else {
-        console.log("need email")
-        messageField.text(`Give us an email address first!`)
-        messageField.show();
-        
-    }
-})
-
-
