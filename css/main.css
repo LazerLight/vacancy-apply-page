@@ -4,8 +4,9 @@ font-family: 'Montserrat', sans-serif;
 font-family: 'Quicksand', sans-serif;
 */
 body{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', 'Times New Roman', sans-serif;
     background-color: rgba(0, 0, 0, .8);
+    min-height: 100vh;
     
 }
 
@@ -16,7 +17,7 @@ body{
     
 }
 h1,h2,h3,h4,h5,h6{
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', 'Courier New', sans-serif;
     
 }
 nav{
@@ -38,6 +39,8 @@ nav{
     width: inherit;
     display: flex;
     justify-content: center;
+
+    -webkit-flex-direction: column;
     flex-direction: column;
 }
 
@@ -62,16 +65,17 @@ nav{
     display: -webkit-flex;
     display: flex;
     
+    flex-flow: row-wrap;
     -webkit-flex-flow: row wrap;
     justify-content: space-around;
 }
 label.error,
-.error-field {
+.message-field {
     color: #ff0000;
     font-weight: bold;
 }
 
-.error-field{
+.message-field{
     display: none;
 }
 .nav-bar li,
@@ -100,15 +104,32 @@ footer div ul li a{
     width: 90%;
     margin-top: 10px;
 }
-.document li:first-child,
-.personal-details li:first-child
+
+.sub-title
 {
     text-align: center;
     padding: 15px;  
     background-color: rgba(0, 0, 0, .8);
     color: white;
     font-weight: bold;
+    font-size: 1.5em;
+
 }
+
+.faq h5{
+    text-decoration: underline;
+    font-size: 25px;
+    margin: 10px 5px;
+}
+.faq p{
+    padding: 5px 15px;
+    font-size: 20px;
+    display: none;
+}
+.faq h5 .fa-minus-square{
+    display: none;
+}
+
 
 @media (max-width: 480px) {
     h1{
@@ -124,7 +145,9 @@ footer div ul li a{
     nav{
         z-index: 5; 
         position: absolute;
-        display: block;
+        display: none;
+        width: 90%;
+        overflow: hidden;
     }
     .nav-bar li{
         text-align: center;
@@ -162,7 +185,6 @@ footer div ul li a{
         font-weight: bold;
     }
     
-    
 }
 
 @media (min-width: 481px) {
@@ -174,8 +196,14 @@ footer div ul li a{
     }
     
     .nav-bar{
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
         display: flex;
-        flex-direction: row;
+
+        -webkit-flex-direction: column;
+        flex-direction: column;
         justify-content: flex-end;
         font-size: 20px;
     }
@@ -199,15 +227,22 @@ footer div ul li a{
         width: 80%;
     }
     
-    .document li:first-child,
-    .personal-details li:first-child
-    {
-        height: 30px;
+    .miscellaneous-section{
+        width: 95%;
+        margin: 0 auto;
     }
     
+    footer{
+        position:absolute;
+    }
     footer div ul{
-        width: 30%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
         display: flex;
+
+        width: 30%;
         margin-top: 3px;
         margin-bottom: 3px;
         border-right: 1px;
