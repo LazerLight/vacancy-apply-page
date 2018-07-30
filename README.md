@@ -14,7 +14,7 @@ Your assignment is to create an application page for one of Netwerven’s client
 a form that will allow the applicant to enter his or her personal details, provide a motivational 
 letter and upload his or her CV.  
 
-##The form
+## The form
 On submission, the page should show a message thanking the applicant for applying.The 
 applicant must be able to complete the form with any type of input method (keyboard, 
 mouse, touch screen) on any type of device. The form should provide immediate feedback to 
@@ -36,7 +36,7 @@ points for parallax scrolling), the apply form, an FAQ section and the footer wi
 pages. 
 On smaller screens and on mobile devices, the menu will slide in and out from the left. 
 
-##Technical requirements  
+## Technical requirements  
 
 ### Browser support  
 
