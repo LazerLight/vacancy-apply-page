@@ -1,4 +1,4 @@
-#The vacancy apply page
+# The vacancy apply page
 
 ## Description
 An applicant, visiting one of Netwerven’s clients websites, should be able to apply in a 
@@ -46,7 +46,7 @@ On smaller screens and on mobile devices, the menu will slide in and out from th
 - Android 4+ 
 - iOS 7+ 
 
-###Evaluation criteria  
+### Evaluation criteria  
 Your work will be assessed based on the following criteria: 
 - documentation 
 - cross­device/browser/platform conformity 
